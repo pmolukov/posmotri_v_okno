@@ -49,6 +49,19 @@ ol {
 
 }
 
+.result__video-container {
+  inline-size: 711px;
+  block-size: 386px;
+  margin-block-end: 16px;
+  position: relative;
+}
+
+.result__video {
+  inline-size: 100%;
+  block-size: 100%;
+  object-fit: cover;
+}
+
 .search-form {
   display: flex;
   gap: 40px;
@@ -68,4 +81,31 @@ ol {
 .content__list {
   max-block-size: 300px;
   overflow: auto;
+  position: relative;
+}
+
+.content__list-item:not(:last-of-type) {
+  margin-block-end: 30px;
+
+}
+
+.content__video-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: start;
+}
+
+.content__video-card-title {
+
+}
+
+.content__video-card-description {
+
+}
+
+.content__video-card-thumbnail {
+  inline-size: 194px;
+  block-size: 103px;
+  
+  
 }
