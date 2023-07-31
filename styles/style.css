@@ -70,6 +70,7 @@ ol {
   inline-size: 100%;
   block-size: 100%;
   object-fit: cover;
+  object-position: center;
 }
 
 .search-form {
@@ -95,6 +96,19 @@ ol {
   cursor: pointer;
 }
 
+.search-form__label:focus {
+  outline: none;
+}
+
+.search-form__label:hover .search-form__label-text {
+  text-decoration: underline;
+}
+
+.search-form__label[type='checkbox']:focus-visible {
+  outline: 1px solid #fff;
+  outline-offset: 1px;
+}
+
 .search-form__textfield {
   appearance: none;
   font-family: inherit;
@@ -110,6 +124,19 @@ ol {
   color: rgb(255 255 255 / 0.7);
 }
 
+.search-form__textfield:focus {
+  outline: none;
+}
+
+.search-form__textfield:focus-visible {
+  outline: 1px solid #fff;
+  outline-offset: 1px;
+}
+
+.search-form__textfield:active {
+  border: 1px solid #fff;
+}
+
 .search-form__checkbox-list {
   display: flex;
   justify-content: space-between;
@@ -123,6 +150,17 @@ ol {
   border: 1px solid #fff;
   margin-inline-end: 5px;
   display: flex;
+  position: relative;
+}
+
+.search-form__checkbox:checked + .search-form__pseudo-checkbox::after {
+  content: '';
+  inline-size: 15px;
+  block-size: 15px;
+  background-color: #fff;
+  position: absolute;
+  top: 1px;
+  left: 1px;
 }
 
 .button {
@@ -145,6 +183,23 @@ ol {
 .more-button {
   inline-size: 100%;
 
+}
+
+.button:hover {
+  text-decoration: underline;
+}
+
+.button:active {
+  background-color: #545050;
+}
+
+.button:focus {
+  outline: none;
+}
+
+.button:focus-visible {
+  outline: 1px solid #fff;
+  outline-offset: 1px;
 }
 
 .content__details {
