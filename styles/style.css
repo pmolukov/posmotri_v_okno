@@ -228,12 +228,29 @@ ol {
 
 .content__list-item:not(:last-of-type) {
   margin-block-end: 30px;
-
 }
 
 .content__card-link {
   text-decoration: none;
   color: #fff;
+  margin: 1px;
+}
+
+.content__list-item:active {
+  background-color: #545050;
+}
+
+.content__list-item:hover {
+  text-decoration: underline;
+}
+
+.content__list-item:focus {
+  outline: none;
+}
+
+.content__list-item:focus-visible {
+  outline: 1px solid #fff;
+  outline-offset: 1px;
 }
 
 .content__video-card {
