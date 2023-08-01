@@ -87,7 +87,7 @@ ol {
   margin-block-end: 5px;
   font-weight: 400;
   font-size: 18px;
-  line-height: 1.0;
+  line-height: 1;
 }
 
 .search-form__label {
@@ -100,13 +100,13 @@ ol {
   outline: none;
 }
 
-.search-form__label:hover .search-form__label-text {
-  text-decoration: underline;
-}
-
-.search-form__label:has(.search-form__checkbox):focus-visible {
+.search-form__label:has(:focus-visible) {
   outline: 1px solid #fff;
   outline-offset: 1px;
+}
+
+.search-form__label:hover .search-form__label-text {
+  text-decoration: underline;
 }
 
 .search-form__textfield {
@@ -116,7 +116,7 @@ ol {
   color: inherit;
   font-family: inherit;
   font-size: inherit;
-  line-height: 1.0;
+  line-height: 1;
   background-color: transparent;
   appearance: none;
   min-inline-size: 225px;
@@ -126,7 +126,7 @@ ol {
   color: rgb(255 255 255 / 0.7);
   font-family: inherit;
   font-size: inherit;
-  line-height: 1.0;
+  line-height: 1;
 }
 
 .search-form__textfield:focus {
@@ -139,7 +139,8 @@ ol {
 }
 
 .search-form__textfield:active {
-  border: 1px solid #fff;
+  border: none;
+  outline: none;
 }
 
 .search-form__checkbox-list {
@@ -187,7 +188,8 @@ ol {
 }
 
 .more-button {
-  inline-size: 100%;
+  inline-size: calc(100% - 4px);
+  margin: 2px; 
 }
 
 .button:hover {
@@ -210,6 +212,9 @@ ol {
 .content__details {
   block-size: 100%;
   inline-size: 100%;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr 300px;
 }
 
 .title {
@@ -228,35 +233,37 @@ ol {
 .content__list {
   position: relative;
   overflow: auto;
-  max-block-size: 300px;
-}
-
-.content__list-item:not(:last-of-type) {
-  margin-block-end: 35px;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
 }
 
 .content__card-link {
   display: block;
-  margin: 1px;
+  margin: 2px;
   color: #fff;
   text-decoration: none;
 }
 
-.content__list-item:active {
+.content__card-link_current {
   background-color: #545050;
 }
 
-.content__list-item:hover {
-  text-decoration: underline;
-}
-
-.content__list-item:focus {
+.content__card-link:focus {
   outline: none;
 }
 
-.content__list-item:focus-visible {
+.content__card-link:focus-visible {
   outline: 1px solid #fff;
   outline-offset: 1px;
+}
+
+.content__card-link:hover {
+  text-decoration: underline;
+}
+
+.content__card-link:active {
+  background-color: #545050;
 }
 
 .content__video-card {
@@ -267,10 +274,10 @@ ol {
 
 .content__video-card-title {
   margin-block-end: 6px;
-  font-family: Oswald;
+  font-family: 'Oswald', sans-serif;
   font-weight: 700;
   font-size: 30px;
-  line-height: 1.0;
+  line-height: 1;
   text-transform: uppercase;
 }
 
